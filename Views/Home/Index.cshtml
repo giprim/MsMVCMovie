@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MsMVC.Models.Movie>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="imagebox">
+    <div class="welcome">
+        <h1>Welcome to Movie List</h1>
+    </div>
+</div>
+<div class="container my-3">
+    <div class="row">
+        @foreach(var item in Model)
+        {        
+        <div class="col-lg-3 col-md-4  shadow-sm rounded my-1 text-center">
+           <img src="@item.Image" class="img-fluid w-100" />
+           <div class="p-1">
+
+            <h4 class=" h4 py-4">@item.Title</h4>
+            <div class="py-1">
+                <h6>Release Date</h6>
+                <p class="text-black-50">@item.ReleaseDate</p>
+            </div>
+            <div>
+                <h6>Genre</h6>
+                <p class="text-black-50">@item.Genre</p>
+            </div>
+            <div class="py-1">
+                <p class="text-light text-center rounded bg-danger py-2 h4">$@item.Price</p>
+            </div>
+           </div>
+        </div>            
+
+        }
+
+    </div>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<style scoped>
+.imagebox {
+    background: url("https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80") no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    background-attachment: fixed;
+    height: 500px;
+    margin: 0;
+    position: relative;
+}
+
+.welcome{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    background: #000000a5;
+    display: flex;
+}
+.welcome h1{
+    display: inline-block;
+    margin: auto;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+</style>
